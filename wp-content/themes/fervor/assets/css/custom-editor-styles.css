@@ -1,0 +1,13 @@
+.button a,a .button {
+	background-color:$brandColorRed;
+	box-shadow: none;
+	border:0;
+	text-shadow:none;
+	border-radius: 2rem;
+	width:auto;
+	color:$brandColorWhite;
+	font-weight:300;
+	font-size:110%;
+	line-height:1rem;
+	padding: .7rem 2rem;
+}

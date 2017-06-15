@@ -1,0 +1,107 @@
+#sb_instagram #sbi_load {
+	padding-top: 0 !important;
+}
+#sb_instagram.sbi_col_4 #sbi_images .sbi_item {
+	position: relative;
+	overflow:hidden;
+
+	.sbi_photo {
+		max-height: 322px;
+
+		@include bp(laptop) {
+			max-height:400px;
+		}
+		@include bp(desktop) {
+			max-height:500px;
+		}
+
+	}
+
+	@include bp(tabletPortrait) {
+		&:first-child {
+			width:25%;
+		}
+		&:nth-child(2) {
+			width:43%;
+		}
+		&:nth-child(3) {
+			width:32%;
+		}
+		&:nth-child(4) {
+			width:43%;
+		}
+		&:nth-child(5) {
+			width:32%;
+		}
+		&:nth-child(6) {
+			width:25%;
+		}
+	}
+	.sbi_info {
+		position:absolute;
+		top:0;
+		bottom:0;
+		z-index: 20;
+		display: none;
+		color:$brandColorWhite;
+	}
+
+	&::after {
+			content:'';
+			display:block;
+			position: absolute;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+			background-color: rgba($brandColorRed,.0);
+			transition:0.5s;
+			pointer-events:none;
+		}
+	&:hover {
+		&::after {
+			background-color: rgba($brandColorRed,.7);
+		}
+		.sbi_info {
+			display:block;
+			text-align:left;
+			padding-left:1rem;
+			pointer-events:none;
+
+			.sbi_meta {
+				position:absolute;
+				bottom:1rem;
+				width:100%;
+
+				.sbi_likes {
+					font-size:20px !important;
+				}
+
+				.fa-heart {
+					text-indent: -99999rem;
+					padding-left: .9rem;
+
+					font-size:20px !important;
+					background-image:url(assets/img/fervor-flame-white.svg);
+					background-repeat:no-repeat;
+					background-size:100%;
+				}
+				&::after {
+					content:'View on Instagram';
+					@include button;
+					@include buttonReverse;
+					font-size:10px;
+					padding:.5rem;
+					position:absolute;
+					bottom:.2rem;
+					right:2.5rem;
+				}
+			}
+		}
+	}
+	#sb_instagram .sbi_link {
+		display:block;
+		z-index:200;
+		background:black;
+	}
+}

@@ -1,0 +1,154 @@
+#masthead {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	z-index: 10;
+	
+	.site-branding {
+		.logo {
+			display:block;
+			margin:.5rem;
+			@include bp(phablet) {
+				margin:1rem;
+			}
+		}
+	}
+	.main-navigation {
+		text-align: right;
+		padding-right:0;
+
+		&.toggled {
+			.menu-primary-container {
+				max-height: 400px;
+				background-color:rgba($brandColorWhite,.9);
+				padding-bottom:1.5rem;
+				
+			}
+			.sub-menu {
+				li {
+					display:block;
+				}
+			}
+		}
+		.menu-primary-container {
+			-webkit-transition: max-height 1s; 
+			-moz-transition: max-height 1s; 
+			-ms-transition: max-height 1s; 
+			-o-transition: max-height 1s; 
+			transition: max-height 1s;  
+			overflow: hidden;
+			// "height: 0" not work with css transitions
+			max-height: 0;
+
+
+			background-color:rgba($brandColorWhite,0);
+			transition:1s;
+
+			@include bp(tabletPortrait) {
+				//height: 800px;
+				max-height:600px;
+				background-color:rgba($brandColorWhite,0);
+				padding-bottom:1.5rem;
+			}
+		}
+
+		ul {
+			margin-top:3rem;
+
+
+			@include bp(tabletPortrait) {
+				margin-top:0;
+			}
+		}
+		
+		li {
+			margin-right:1.5rem;
+			padding-top:1rem;
+			float:right;
+			position:relative;
+			display:block;
+			clear:both;
+
+			@include bp(tabletPortrait) {
+				display:inline-block;
+				float:none;
+				clear:none;
+				margin-right:2rem;
+			}
+
+			a {
+				color:$brandColorBlack;
+				transition:.5s;
+
+				&:hover {
+					background-color:rgba($brandColorWhite,.9);
+				}
+			}
+
+			&:after {
+				content:'';
+				position:absolute;
+				left:0;
+				width:100%;
+				height:3px;
+				background-color:$brandColorRed;
+			}
+			
+			.sub-menu {
+				box-shadow:none;
+				margin-top:1rem;
+				position:relative;
+			    top: -1rem;
+			    left:0;
+			    //background-color:rgba($brandColorWhite,.9);
+
+			    @include bp(tabletPortrait) {
+			    	margin-left:-2rem;
+			    	//left:-99999em;
+			    	opacity:0;
+			    	transition:.3s;
+			    	
+			    }
+
+				&:after {
+					clear:both;
+					content:'';
+					width:100%;
+				}
+				li {
+					width:auto;
+					font-size:80%;
+					text-align:left;
+					margin-right:0;
+
+				
+
+				    @include bp(tabletPortrait) {
+				    	float: left;
+				    	clear:both;
+				    	position:relative;
+				    	left:2rem;
+				    }
+					a {
+						width:auto;
+						background-color:rgba($brandColorWhite,.5);
+
+						&:hover {
+							background-color:rgba($brandColorWhite,.9);
+						}
+					}
+				}
+			}
+			@include bp(tabletPortrait) {
+				&:hover {
+					.sub-menu {
+						left:2rem;
+						opacity:1;
+					} 		
+		    	}
+			}
+		}
+	}
+}
+@import 'hamburger.scss';

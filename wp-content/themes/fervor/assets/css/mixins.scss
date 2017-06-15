@@ -1,0 +1,114 @@
+@mixin rem($selector,$target,$context:$root-font-size) {
+  #{$selector} : ($target) + px;
+  #{$selector} : remcalc($target,$context) + rem;
+}
+
+@mixin bodyTypography {
+	font-family: $fontBody;
+	font-weight: 400;
+	font-size: $root-font-size + px;
+
+	@include bp(tabletLandscape) {
+		font-size:20px;
+	}
+
+	@include bp(laptop) {
+		font-size:22px;
+	}
+
+	@include bp(desktop) {
+		font-size:24px;
+	}
+}
+@mixin headingTypography {
+	font-family: $fontHeading;
+	font-weight: 400;
+	font-size: $root-font-size + px;
+	line-height: 0.9;
+}
+
+@mixin backgroundImage {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}
+
+@mixin button {
+	background-color:$brandColorRed;
+	box-shadow: none;
+	border:0;
+	text-shadow:none;
+	border-radius: 2rem;
+	width:auto;
+	color:$brandColorWhite;
+	font-weight:300;
+	font-size:110%;
+	line-height:1rem;
+	padding: .7rem 2rem;
+}
+@mixin buttonReverse {
+	background-color:$brandColorWhite;
+	color:$brandColorRed;
+}
+
+@mixin woodGrain {
+	background-image:url('assets/img/woodgrain.png');
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+
+@mixin gradientBkgd {
+  background : -moz-linear-gradient(79.31% 115.39% 120deg,rgba(255, 255, 255, 0.5) 49.83%,rgba(204, 204, 204, 1) 100%);
+  background : -webkit-linear-gradient(120deg, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  background : -webkit-gradient(linear,79.31% 115.39% ,20.69% -15.39% ,color-stop(0.4983,rgba(255, 255, 255, 0.5) ),color-stop(1,rgba(204, 204, 204, 1) ));
+  background : -o-linear-gradient(120deg, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  background : -ms-linear-gradient(120deg, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF', endColorstr='#CCCCCC' ,GradientType=0)";
+  background : linear-gradient(-30deg, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFF',endColorstr='#CCCCCC' , GradientType=1);
+}
+@mixin gradientBkgdB {
+	background : -moz-linear-gradient(76.57% 120.82% 120deg,rgba(196, 198, 200, 1) 0%,rgba(205, 207, 209, 0.97) 3.1%,rgba(227, 228, 229, 0.88) 12.24%,rgba(243, 243, 244, 0.78) 22.25%,rgba(252, 252, 252, 0.66) 33.72%,rgba(255, 255, 255, 0.5) 49.83%,rgba(204, 204, 204, 1) 100%);
+  background : -webkit-linear-gradient(120deg, rgba(196, 198, 200, 1) 0%, rgba(205, 207, 209, 0.97) 3.1%, rgba(227, 228, 229, 0.88) 12.24%, rgba(243, 243, 244, 0.78) 22.25%, rgba(252, 252, 252, 0.66) 33.72%, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  background : -webkit-gradient(linear,76.57% 120.82% ,23.43% -20.82% ,color-stop(0,rgba(196, 198, 200, 1) ),color-stop(0.031,rgba(205, 207, 209, 0.97) ),color-stop(0.1224,rgba(227, 228, 229, 0.88) ),color-stop(0.2225,rgba(243, 243, 244, 0.78) ),color-stop(0.3372,rgba(252, 252, 252, 0.66) ),color-stop(0.4983,rgba(255, 255, 255, 0.5) ),color-stop(1,rgba(204, 204, 204, 1) ));
+  background : -o-linear-gradient(120deg, rgba(196, 198, 200, 1) 0%, rgba(205, 207, 209, 0.97) 3.1%, rgba(227, 228, 229, 0.88) 12.24%, rgba(243, 243, 244, 0.78) 22.25%, rgba(252, 252, 252, 0.66) 33.72%, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  background : -ms-linear-gradient(120deg, rgba(196, 198, 200, 1) 0%, rgba(205, 207, 209, 0.97) 3.1%, rgba(227, 228, 229, 0.88) 12.24%, rgba(243, 243, 244, 0.78) 22.25%, rgba(252, 252, 252, 0.66) 33.72%, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#C4C6C8', endColorstr='#CCCCCC' ,GradientType=0)";
+  background : linear-gradient(-30deg, rgba(196, 198, 200, 1) 0%, rgba(205, 207, 209, 0.97) 3.1%, rgba(227, 228, 229, 0.88) 12.24%, rgba(243, 243, 244, 0.78) 22.25%, rgba(252, 252, 252, 0.66) 33.72%, rgba(255, 255, 255, 0.5) 49.83%, rgba(204, 204, 204, 1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#C4C6C8',endColorstr='#CCCCCC' , GradientType=1);
+}
+
+@mixin gradientBkgdOverlay {
+  background : -moz-linear-gradient(0% 50% 0deg,rgba(35, 31, 32, 0) 0%,rgba(0, 0, 0, 0.1) 100%);
+  background : -webkit-linear-gradient(0deg, rgba(35, 31, 32, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background : -webkit-gradient(linear,0% 50% ,100% 50% ,color-stop(0,rgba(35, 31, 32, 0) ),color-stop(1,rgba(0, 0, 0, 0.1) ));
+  background : -o-linear-gradient(0deg, rgba(35, 31, 32, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  background : -ms-linear-gradient(0deg, rgba(35, 31, 32, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#231F20', endColorstr='#000000' ,GradientType=0)";
+  background : linear-gradient(90deg, rgba(35, 31, 32, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#231F20',endColorstr='#000000' , GradientType=1);
+}
+
+@mixin bp($device) {
+	@if $device == largeFormat {
+		@media (min-width:$xxlarge) { @content ; }
+	}
+	@if $device == desktop {
+		@media (min-width:$xlarge) { @content ; }
+	}
+	@else if $device == laptop {
+		@media (min-width:$large) { @content ; }
+	}
+	@else if $device == tabletLandscape {
+		@media (min-width:$medium) { @content ; }
+	}
+	@else if $device == tabletPortrait {
+		@media (min-width:$small) { @content ; }
+	}
+	@else if $device == phablet {
+		@media (min-width:$xsmall) { @content ; }
+	}
+	@else if $device == phone {
+		@media (max-width:$xsmall) { @content ; }
+	}
+}

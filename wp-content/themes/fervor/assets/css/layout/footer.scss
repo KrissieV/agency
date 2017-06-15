@@ -1,0 +1,91 @@
+#colophon {
+	@include woodGrain;
+	background-color:$brandColorTaupe;
+	padding-top:5%;
+
+	.menu-footer-container {
+		ul {
+			list-style: none;
+			margin-left: 0;
+			padding-left: 1rem;
+
+			@include bp(tabletPortrait) {
+				padding-left: 0;
+			}
+
+			li {
+				a {
+					color:$brandColorWhite;
+					font-size:80%;
+				}
+			}
+
+			li:nth-child(1),li:nth-child(2) {
+				a {
+					@include button;
+					@include buttonReverse;
+					display: inline-block;
+					margin-bottom:1rem;
+					font-size:90%;
+
+				}
+			}
+		}
+	}
+	h2 {
+		color:$brandColorWhite;
+		margin-top:0;
+		padding-top:0;
+		padding-left:1rem;
+		padding-right: 1rem;
+		line-height: 1;
+
+		@include bp(tabletPortrait) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+	h4 {
+		margin-left:1rem;
+		color:$brandColorWhite;
+		margin-right: 1rem;
+		margin-top: 0;
+		line-height:1.2;
+
+		@include bp(tabletPortrait) {
+			margin-right:0;
+			text-align: right;
+		}
+	}
+	.recent-post {
+		p {
+			padding-left:1rem;
+			padding-right: 1rem;
+			color:$brandColorWhite;
+
+			@include bp(tabletPortrait) {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		a {
+			@include button;
+			@include buttonReverse;
+			font-size:80%;
+			padding:.5rem 1rem;
+			float: right;
+		}
+	}
+
+	.site-info {
+		margin-top:5%;
+		background-color: $brandColorRed;
+		color:$brandColorWhite;
+		font-size:12px;
+		padding:.5rem;
+		padding-left:2rem;
+	}
+	p {
+		color:$brandColorWhite;
+	}
+}
